@@ -1,0 +1,72 @@
+<!-- HTML -->
+<div class="app">
+  <header class="header">
+    <div class="brand">
+      <div class="logo">ACTU</div>
+      <div class="title">
+        <h1>Колесо фортуни</h1>
+        <p class="sub">Введи ім’я → крути → отримай результат</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- STEP 1: Registration -->
+  <section class="card" id="stepRegistration" aria-labelledby="regTitle">
+    <h2 id="regTitle">1) Введи ім’я</h2>
+    <form id="regForm" class="form">
+      <label class="field">
+        <span>Ім’я</span>
+        <input id="nameInput" type="text" placeholder="Напр. Юрій" autocomplete="name" required maxlength="40" />
+      </label>
+      <button class="btn primary" type="submit">Підтвердити</button>
+      <p class="hint">* Поки що без бекенду. Результат рандомний.</p>
+    </form>
+  </section>
+
+  <!-- STEP 2: Wheel -->
+  <section class="card hidden" id="stepWheel" aria-labelledby="wheelTitle">
+    <div class="wheelTop">
+      <h2 id="wheelTitle">2) Крути колесо</h2>
+      <div class="hello" id="helloText"></div>
+    </div>
+
+    <div class="wheelWrap">
+      <div class="pointer" aria-hidden="true"></div>
+
+      <div class="wheelArea">
+        <div class="wheel" id="wheel" aria-label="Wheel">
+          <!-- Labels are positioned around the wheel -->
+          <div class="label" style="--i:0">Стікери</div>
+          <div class="label" style="--i:1">Знижка 5%</div>
+          <div class="label" style="--i:2">Футболка</div>
+          <div class="label" style="--i:3">Знижка 10%</div>
+          <div class="label" style="--i:4">Шопер</div>
+          <div class="label" style="--i:5">Кепка</div>
+          <div class="label" style="--i:6">Сюрприз</div>
+          <div class="label" style="--i:7">Другий шанс</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn primary" id="spinBtn">Крутити</button>
+      <button class="btn ghost" id="restartBtn" type="button">На старт</button>
+    </div>
+
+    <div class="message hidden" id="messageBox" role="status" aria-live="polite">
+      <div class="badge">Результат</div>
+      <div class="msgTitle" id="msgTitle">Вітаємо!</div>
+      <div class="msgBody" id="msgBody"></div>
+      <div class="codeRow">
+        <span class="codeLabel">Код:</span>
+        <span class="code" id="codeText">ACTU-</span>
+        <button class="btn tiny" id="copyBtn" type="button">Скопіювати</button>
+      </div>
+      <div class="fine">* Код умовний (демо). У реальному варіанті генерується на бекенді.</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <span>Demo • HTML/CSS/JS • без бекенду</span>
+  </footer>
+</div>
